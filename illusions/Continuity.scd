@@ -26,7 +26,7 @@ n = Synth("noise", [dur:0.1, amp:0.1]);
 (
 var dur1 = 0.1;
 var dur2 = 0.1;
-var steps = 20;
+var steps = 200;
 
 var amp1 = Pseq([0.1], steps);
 var amp2 = Pseq([0.0], steps);
@@ -48,7 +48,7 @@ p = Pbind(
 (
 var dur1 = 0.1;
 var dur2 = 0.1;
-var steps = 20;
+var steps = 200;
 
 var amp1 = Pseq([0.0], steps);
 var amp2 = Pseq([0.1], steps);

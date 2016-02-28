@@ -1,15 +1,15 @@
 (
 o = ServerOptions.new;
-o.numWireBufs = 1000000;
+o.numWireBufs = 100000000;
 s.boot;
 )
 
 (
 {
 	var amp = 0.002;
-	var df = 0.075;
-	var n = 10;
-	var harm = 10;
+	var df = 0.1;
+	var n = 20; // 10
+	var harm = 20; // 10
 	var f = Array.new((n+1)*harm);
 
 	(0..n).do({ |item|

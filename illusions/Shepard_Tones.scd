@@ -1,9 +1,7 @@
-// Shepard tones, aka infinite glissando
-// code from Eli Fieldsteel, see https://youtube.com/watch?v=Gn0A9Fa_APg
+// code from Eli Fieldsteel, see https://www.youtube.com/watch?v=Gn0
 
 (
 s = Server.local;
-
 s.waitForBoot({
 
 SynthDef("shep",{
@@ -17,7 +15,7 @@ SynthDef("shep",{
 
 ~playShep = {
 
-	arg	speed=0.15,
+	arg	speed=0.015,
 			volume=0.5,
 			direction=0,
 			centerFreqShift=0;
@@ -46,10 +44,10 @@ SynthDef("shep",{
 			Pseq(ampArray,inf) *
 			Pseq([
 				Pseg(Pseq([0,1],1),Pseq([1,0],1),\sine),
-				Pseq([1],inf)ndo
+				Pseq([1],inf)
 				],1) *
 			volume,
-		midinote:Pseq(midiArray,inf),1]);
+		midinote:Pseq(midiArray,inf),]);
 
 	pat1 = Pmono(*[\shep,
 		dur:speed,
@@ -156,9 +154,7 @@ SynthDef("shep",{
 )
 
 
-(
-~playShep.(0.005, 0.75,  0,  0);
-)
+~playShep.(0.02, 0.75,  1,  0);
 
 (
 ~playShep.(0.035, 0.24,  0,  0);
